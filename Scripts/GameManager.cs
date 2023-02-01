@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public Image WorkerTimerImg;
     public Image WarriorsTimerImg;
 
-
     public Button workerButton;
     public Button warriorButton;
 
@@ -20,7 +19,6 @@ public class GameManager : MonoBehaviour
     public int workerCount;
     public int warriorsCount;
     public int wheatCount;
-
 
     public int wheatPerWorkers;
     public int wheatToWarriors;
@@ -33,7 +31,6 @@ public class GameManager : MonoBehaviour
     public float raidMaxTime;
     public int raidIncrease;
     public int nextRaid;
-
 
     private float _workerTimer = -2;
     private float _warriorTimer = -2;
@@ -104,8 +101,8 @@ public class GameManager : MonoBehaviour
             wheatCount -= workerCost;
             _workerTimer = workerCreatTime;
             workerButton.interactable = false;
-        }  
-        else if(wheatCount<wheatPerWorkers)
+        }
+        else if (wheatCount < wheatPerWorkers)
         {
             workerButton.interactable = false;
         }
@@ -119,7 +116,7 @@ public class GameManager : MonoBehaviour
             _warriorTimer = warriorCreatTime;
             warriorButton.interactable = false;
         }
-        else if(wheatCount<wheatToWarriors)
+        else if (wheatCount < wheatToWarriors)
         {
             warriorButton.interactable = false;
         }
@@ -127,6 +124,6 @@ public class GameManager : MonoBehaviour
 
     private void UpdateText()
     {
-        resourcesText.text =workerCount +"\n"+ warriorsCount + "\n\n"+ wheatCount;
+        resourcesText.text = ($"Рабочие:{workerCount} \n Воины:{warriorsCount} \n\n Пшеница:{wheatCount}");
     }
 }

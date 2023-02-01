@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ImageTimer : MonoBehaviour
 {
+    private AudioSource _audio;
     public float MaxTime;
     public bool Tick;
 
@@ -14,7 +15,7 @@ public class ImageTimer : MonoBehaviour
     void Start()
     {
         _image = GetComponent<Image>();
-
+        _audio = GetComponent<AudioSource>();
         _currentTime = MaxTime;
     }
 
@@ -27,6 +28,7 @@ public class ImageTimer : MonoBehaviour
         {
             Tick = true;
             _currentTime = MaxTime;
+            _audio.Play();
         }
 
         _image.fillAmount = _currentTime / MaxTime;
