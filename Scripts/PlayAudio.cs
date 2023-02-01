@@ -7,7 +7,7 @@ public class PlayAudio : MonoBehaviour
 {
     public AudioSource Audio;
 
-    void Start()
+    private void Start()
     {
         Audio = GetComponent<AudioSource>();
     }

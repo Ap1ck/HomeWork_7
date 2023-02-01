@@ -11,7 +11,7 @@ public class ImageTimer : MonoBehaviour
 
     private Image _image;
     private float _currentTime;
-   
+
     void Start()
     {
         _image = GetComponent<Image>();

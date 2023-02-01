@@ -5,22 +5,37 @@ using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour
 {
-    public AudioSource Sound;
+    public Button Worker;
+    public Button Warrior;
+    public AudioSource BackgroundSound;
+    public AudioSource HarvestingWheatSound;
+    public AudioSource RaidSound;
+    public AudioSource CollectionOfFoddSound;
+    public int Warriors;
 
     private bool _paused;
     private bool _mute;
 
     public void PauseGame()
     {
+        Worker.interactable = true;
+        Warrior.interactable=true;
+
         if (_paused)
         {
             Time.timeScale = 1;
-            Sound.Play();
+            BackgroundSound.Play();
+            HarvestingWheatSound.Play();
+            CollectionOfFoddSound.Play();
         }
         else
         {
             Time.timeScale = 0;
-            Sound.Pause();
+            BackgroundSound.Pause();
+            HarvestingWheatSound.Pause();
+            CollectionOfFoddSound.Pause();
+            Worker.interactable = false;
+            Warrior.interactable = false;
         }
 
         _paused = !_paused;
@@ -30,11 +45,11 @@ public class PauseController : MonoBehaviour
     {
         if (_mute)
         {
-            Sound.Play();
+            BackgroundSound.Play();
         }
         else
         {
-            Sound.Pause();
+            BackgroundSound.Pause();
         }
 
         _mute = !_mute;
