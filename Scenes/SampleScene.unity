@@ -2839,7 +2839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 4
+  _maxTime: 200
 --- !u!82 &1849761030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3238,6 +3238,7 @@ GameObject:
   - component: {fileID: 1912806779}
   - component: {fileID: 1912806778}
   - component: {fileID: 1912806780}
+  - component: {fileID: 1912806781}
   m_Layer: 5
   m_Name: WinPanel
   m_TagString: Untagged
@@ -3400,6 +3401,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1912806781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912806776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7879bbefda9262448c6296cbc8aac8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 1912806778}
 --- !u!1 &1914120047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,8 +3448,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -306, y: 43}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -292, y: 30}
+  m_SizeDelta: {x: 170, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914120049
 MonoBehaviour:
@@ -3470,7 +3484,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u0417\u0430\u0434\u0430\u0447\u0430:\n\u0414\u043E\u0431\u044B\u0442\u044C
+    \u0435\u0434\u044B:20\n\u041E\u0431\u0443\u0447\u0438\u0442\u044C \u0432\u043E\u0438\u043D\u043E\u0432:2"
 --- !u!222 &1914120050
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3611,7 +3626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 5
+  _maxTime: 200
 --- !u!114 &1948592523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4013,6 +4028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _harvestTimer: {fileID: 363217989}
   _eatingTimer: {fileID: 1849761029}
+  _resultGame: {fileID: 0}
   _raidTimerImg: {fileID: 1948592523}
   _workerTimerImg: {fileID: 839665079}
   _warriorsTimerImg: {fileID: 780130572}
@@ -4026,9 +4042,9 @@ MonoBehaviour:
   _wheatToWarriors: 5
   _workerCost: 4
   _warriorCost: 7
-  _workerCreatTime: 7
-  _warriorCreatTime: 13
-  _raidMaxTime: 5
+  _workerCreatTime: 5
+  _warriorCreatTime: 5
+  _raidMaxTime: 200
   _raidIncrease: 3
   _nextRaid: 0
 --- !u!1 &2107604130
@@ -4043,6 +4059,7 @@ GameObject:
   - component: {fileID: 2107604133}
   - component: {fileID: 2107604132}
   - component: {fileID: 2107604134}
+  - component: {fileID: 2107604135}
   m_Layer: 5
   m_Name: LosePanel
   m_TagString: Untagged
@@ -4208,6 +4225,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2107604135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107604130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7879bbefda9262448c6296cbc8aac8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 2107604132}
 --- !u!1 &2122733163
 GameObject:
   m_ObjectHideFlags: 0
