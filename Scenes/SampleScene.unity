@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 6
+  _maxTime: 5
 --- !u!82 &363217990
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1308,6 +1308,18 @@ MonoBehaviour:
       - m_Target: {fileID: 964737055}
         m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2122733167}
+        m_TargetAssemblyTypeName: SetActiveImage, Assembly-CSharp
+        m_MethodName: ShowImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2827,7 +2839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 8
+  _maxTime: 4
 --- !u!82 &1849761030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3599,7 +3611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 60
+  _maxTime: 5
 --- !u!114 &1948592523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4016,7 +4028,7 @@ MonoBehaviour:
   _warriorCost: 7
   _workerCreatTime: 7
   _warriorCreatTime: 13
-  _raidMaxTime: 60
+  _raidMaxTime: 5
   _raidIncrease: 3
   _nextRaid: 0
 --- !u!1 &2107604130
@@ -4207,6 +4219,7 @@ GameObject:
   - component: {fileID: 2122733164}
   - component: {fileID: 2122733166}
   - component: {fileID: 2122733165}
+  - component: {fileID: 2122733167}
   m_Layer: 5
   m_Name: PauseButtonImage
   m_TagString: Untagged
@@ -4271,3 +4284,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122733163}
   m_CullTransparentMesh: 1
+--- !u!114 &2122733167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122733163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d61aeba0cb9fca47b3cae379786d9d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _imageActive: {fileID: 2122733165}

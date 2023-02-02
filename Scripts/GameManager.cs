@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private ImageTimer _harvestTimer;
     [SerializeField] private ImageTimer _eatingTimer;
+    [SerializeField] private ResultGame _resultGame;
     [SerializeField] private Image _raidTimerImg;
     [SerializeField] private Image _workerTimerImg;
     [SerializeField] private Image _warriorsTimerImg;
@@ -35,6 +36,9 @@ public class GameManager : MonoBehaviour
     private float _workerTimer = -2;
     private float _warriorTimer = -2;
     private float _raidTimer;
+
+    public int WarriorsCount => _warriorsCount;
+    public int WheatCount => _wheatCount;
 
     private void Start()
     {
