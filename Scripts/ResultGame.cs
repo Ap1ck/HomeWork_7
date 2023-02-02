@@ -24,11 +24,8 @@ public class ResultGame : MonoBehaviour
 
     public void ResultLost()
     {
-        if (_gameManager.WarriorsCount <= -1)
-        {
-            _panel.gameObject.SetActive(true);
-            _pauseControll.PauseGame();
-        }
+        _panel.gameObject.SetActive(true);
+        _pauseControll.PauseGame();
     }
 
     public void Update()
