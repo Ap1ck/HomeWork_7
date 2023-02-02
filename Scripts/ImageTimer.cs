@@ -5,32 +5,34 @@ using UnityEngine.UI;
 
 public class ImageTimer : MonoBehaviour
 {
-    private AudioSource _audio;
-    public float MaxTime;
-    public bool Tick;
+    [SerializeField] private float _maxTime;
 
+    private AudioSource _audio;
     private Image _image;
+    private bool _tick;
     private float _currentTime;
 
-    void Start()
+    public bool Tick => _tick;
+
+    private void Start()
     {
         _image = GetComponent<Image>();
         _audio = GetComponent<AudioSource>();
-        _currentTime = MaxTime;
+        _currentTime = _maxTime;
     }
 
-    void Update()
+    private void Update()
     {
-        Tick = false;
+        _tick = false;
         _currentTime -= Time.deltaTime;
 
         if (_currentTime <= 0)
         {
-            Tick = true;
-            _currentTime = MaxTime;
+            _tick = true;
+            _currentTime = _maxTime;
             _audio.Play();
         }
 
-        _image.fillAmount = _currentTime / MaxTime;
+        _image.fillAmount = _currentTime / _maxTime;
     }
 }

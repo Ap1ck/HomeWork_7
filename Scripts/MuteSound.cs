@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MuteSound : MonoBehaviour
 {
-    public AudioSource BackgroundSound;
-    public AudioSource HarvestingWheatSound;
-    public AudioSource CollectionOfFoodSound;
-    public AudioSource RaidSound;
+    [SerializeField] private AudioSource BackgroundSound;
+    [SerializeField] private AudioSource HarvestingWheatSound;
+    [SerializeField] private AudioSource CollectionOfFoodSound;
+    [SerializeField] private AudioSource RaidSound;
 
     private bool _muted;
 
@@ -15,15 +15,17 @@ public class MuteSound : MonoBehaviour
     {
         if (_muted)
         {
-            BackgroundSound.Play();
-            HarvestingWheatSound.Play();
-            CollectionOfFoodSound.Play();
+            BackgroundSound.mute=false;
+            HarvestingWheatSound.mute = false;
+            CollectionOfFoodSound.mute = false;
+            RaidSound.mute = false;
         }
         else
         {
-            BackgroundSound.Pause();
-            HarvestingWheatSound.Pause();
-            CollectionOfFoodSound.Pause();
+            BackgroundSound.mute = true;
+            HarvestingWheatSound.mute = true;
+            CollectionOfFoodSound.mute = true;
+            RaidSound.mute = true;
         }
 
         _muted = !_muted;

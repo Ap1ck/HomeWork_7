@@ -5,32 +5,32 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public ImageTimer HarvestTimer;
-    public ImageTimer EatingTimer;
-    public Image RaidTimerImg;
-    public Image WorkerTimerImg;
-    public Image WarriorsTimerImg;
+    [SerializeField] private ImageTimer _harvestTimer;
+    [SerializeField] private ImageTimer _eatingTimer;
+    [SerializeField] private Image _raidTimerImg;
+    [SerializeField] private Image _workerTimerImg;
+    [SerializeField] private Image _warriorsTimerImg;
 
-    public Button workerButton;
-    public Button warriorButton;
+    [SerializeField] private Button _workerButton;
+    [SerializeField] private Button _warriorButton;
 
-    public Text resourcesText;
+    [SerializeField] private Text _resourcesText;
 
-    public int workerCount;
-    public int warriorsCount;
-    public int wheatCount;
+    [SerializeField] private int _workerCount;
+    [SerializeField] private int _warriorsCount;
+    [SerializeField] private int _wheatCount;
 
-    public int wheatPerWorkers;
-    public int wheatToWarriors;
+    [SerializeField] private int _wheatPerWorkers;
+    [SerializeField] private int _wheatToWarriors;
 
-    public int workerCost;
-    public int warriorCost;
+    [SerializeField] private int _workerCost;
+    [SerializeField] private int _warriorCost;
 
-    public float workerCreatTime;
-    public float warriorCreatTime;
-    public float raidMaxTime;
-    public int raidIncrease;
-    public int nextRaid;
+    [SerializeField] private float _workerCreatTime;
+    [SerializeField] private float _warriorCreatTime;
+    [SerializeField] private float _raidMaxTime;
+    [SerializeField] private int _raidIncrease;
+    [SerializeField] private int _nextRaid;
 
     private float _workerTimer = -2;
     private float _warriorTimer = -2;
@@ -40,54 +40,54 @@ public class GameManager : MonoBehaviour
     {
         UpdateText();
 
-        _raidTimer = raidMaxTime;
+        _raidTimer = _raidMaxTime;
     }
 
     private void Update()
     {
         _raidTimer -= Time.deltaTime;
-        RaidTimerImg.fillAmount = _raidTimer / raidMaxTime;
+        _raidTimerImg.fillAmount = _raidTimer / _raidMaxTime;
 
         if (_raidTimer <= 0)
         {
-            _raidTimer = raidMaxTime;
-            warriorsCount -= nextRaid;
-            nextRaid += raidIncrease;
+            _raidTimer = _raidMaxTime;
+            _warriorsCount -= _nextRaid;
+            _nextRaid += _raidIncrease;
         }
 
-        if (HarvestTimer.Tick)
+        if (_harvestTimer.Tick)
         {
-            wheatCount += workerCount * wheatPerWorkers;
+            _wheatCount += _workerCount * _wheatPerWorkers;
         }
 
-        if (EatingTimer.Tick)
+        if (_eatingTimer.Tick)
         {
-            wheatCount -= warriorsCount * wheatToWarriors;
+            _wheatCount -= _warriorsCount * _wheatToWarriors;
         }
 
         if (_workerTimer > 0)
         {
             _workerTimer -= Time.deltaTime;
-            WorkerTimerImg.fillAmount = _workerTimer / workerCreatTime;
+            _workerTimerImg.fillAmount = _workerTimer / _workerCreatTime;
         }
         else if (_workerTimer > -1)
         {
-            WorkerTimerImg.fillAmount = 1;
-            workerButton.interactable = true;
-            workerCount += 1;
+            _workerTimerImg.fillAmount = 1;
+            _workerButton.interactable = true;
+            _workerCount += 1;
             _workerTimer = -2;
         }
 
         if (_warriorTimer > 0)
         {
             _warriorTimer -= Time.deltaTime;
-            WarriorsTimerImg.fillAmount = _warriorTimer / warriorCreatTime;
+            _warriorsTimerImg.fillAmount = _warriorTimer / _warriorCreatTime;
         }
         else if (_warriorTimer > -1)
         {
-            WarriorsTimerImg.fillAmount = 1;
-            warriorButton.interactable = true;
-            warriorsCount += 1;
+            _warriorsTimerImg.fillAmount = 1;
+            _warriorButton.interactable = true;
+            _warriorsCount += 1;
             _warriorTimer = -2;
         }
 
@@ -96,34 +96,34 @@ public class GameManager : MonoBehaviour
 
     public void CreatWorker()
     {
-        if (wheatCount > wheatPerWorkers)
+        if (_wheatCount > _wheatPerWorkers)
         {
-            wheatCount -= workerCost;
-            _workerTimer = workerCreatTime;
-            workerButton.interactable = false;
+            _wheatCount -= _workerCost;
+            _workerTimer = _workerCreatTime;
+            _workerButton.interactable = false;
         }
-        else if (wheatCount < wheatPerWorkers)
+        else if (_wheatCount < _wheatPerWorkers)
         {
-            workerButton.interactable = false;
+            _workerButton.interactable = false;
         }
     }
 
     public void CreatWarrior()
     {
-        if (wheatCount > wheatToWarriors)
+        if (_wheatCount > _wheatToWarriors)
         {
-            wheatCount -= warriorCost;
-            _warriorTimer = warriorCreatTime;
-            warriorButton.interactable = false;
+            _wheatCount -= _warriorCost;
+            _warriorTimer = _warriorCreatTime;
+            _warriorButton.interactable = false;
         }
-        else if (wheatCount < wheatToWarriors)
+        else if (_wheatCount < _wheatToWarriors)
         {
-            warriorButton.interactable = false;
+            _warriorButton.interactable = false;
         }
     }
 
     private void UpdateText()
     {
-        resourcesText.text = ($"Рабочие:{workerCount} \n Воины:{warriorsCount} \n\n Пшеница:{wheatCount}");
+        _resourcesText.text = ($"Рабочие:{_workerCount} \n Воины:{_warriorsCount} \n\n Пшеница:{_wheatCount}");
     }
 }

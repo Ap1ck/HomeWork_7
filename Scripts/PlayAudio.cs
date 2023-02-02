@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayAudio : MonoBehaviour
 {
-    public AudioSource Audio;
+    [SerializeField] private AudioSource Audio;
 
     private void Start()
     {

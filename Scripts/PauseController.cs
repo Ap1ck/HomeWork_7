@@ -1,57 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour
 {
-    public Button Worker;
-    public Button Warrior;
-    public AudioSource BackgroundSound;
-    public AudioSource HarvestingWheatSound;
-    public AudioSource RaidSound;
-    public AudioSource CollectionOfFoddSound;
-    public int Warriors;
+    [SerializeField] private Button _worker;
+    [SerializeField] private Button _warrior;
+    [SerializeField] private AudioSource _harvestingSound;
+    [SerializeField] private AudioSource _enemiesSound;
+    [SerializeField] private AudioSource _eatingSound;
+    [SerializeField] private AudioSource _backgroundSound;
+
 
     private bool _paused;
     private bool _mute;
 
     public void PauseGame()
     {
-        Worker.interactable = true;
-        Warrior.interactable=true;
+        _worker.interactable = true;
+        _warrior.interactable = true;
 
         if (_paused)
         {
             Time.timeScale = 1;
-            BackgroundSound.Play();
-            HarvestingWheatSound.Play();
-            CollectionOfFoddSound.Play();
+            _harvestingSound.mute = false;
+            _enemiesSound.mute = false;
+            _eatingSound.mute = false;
+            _backgroundSound.mute = false;
         }
         else
         {
             Time.timeScale = 0;
-            BackgroundSound.Pause();
-            HarvestingWheatSound.Pause();
-            CollectionOfFoddSound.Pause();
-            Worker.interactable = false;
-            Warrior.interactable = false;
+            _harvestingSound.mute = true;
+            _enemiesSound.mute = true;
+            _eatingSound.mute = true;
+            _backgroundSound.mute = true;
+
+            _worker.interactable = false;
+            _warrior.interactable = false;
         }
 
         _paused = !_paused;
-    }
-
-    public void TurnOffTheMusic()
-    {
-        if (_mute)
-        {
-            BackgroundSound.Play();
-        }
-        else
-        {
-            BackgroundSound.Pause();
-        }
-
-        _mute = !_mute;
     }
 }

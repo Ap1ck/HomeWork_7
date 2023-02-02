@@ -372,8 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 5
-  Tick: 0
+  _maxTime: 6
 --- !u!82 &363217990
 AudioSource:
   m_ObjectHideFlags: 0
@@ -383,7 +382,7 @@ AudioSource:
   m_GameObject: {fileID: 363217985}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3856862044254437089, guid: 54e14ac5b2751844a97b706a424507a0, type: 2}
   m_audioClip: {fileID: 8300000, guid: 83e39d706cd898546b3dbd038c781bee, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.652
@@ -1464,13 +1463,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc620fb7a65ca4e40b76a1ee096f9d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Worker: {fileID: 579145861}
-  Warrior: {fileID: 1439802569}
-  BackgroundSound: {fileID: 1180159467}
-  HarvestingWheatSound: {fileID: 363217990}
-  RaidSound: {fileID: 1948592525}
-  CollectionOfFoddSound: {fileID: 1849761030}
-  Warriors: 0
+  _worker: {fileID: 579145861}
+  _warrior: {fileID: 1439802569}
+  _harvestingSound: {fileID: 363217990}
+  _enemiesSound: {fileID: 1948592525}
+  _eatingSound: {fileID: 1849761030}
+  _backgroundSound: {fileID: 1180159467}
 --- !u!114 &964737055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1573,7 @@ GameObject:
   - component: {fileID: 1180159466}
   - component: {fileID: 1180159467}
   m_Layer: 5
-  m_Name: BackgrounAudioSource
+  m_Name: BackgrounMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1609,7 +1607,7 @@ AudioSource:
   m_GameObject: {fileID: 1180159465}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1738833974480856430, guid: 54e14ac5b2751844a97b706a424507a0, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3516484393a1ec54784b1cccdc83e9dc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
@@ -2829,8 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 7
-  Tick: 0
+  _maxTime: 8
 --- !u!82 &1849761030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2840,9 +2837,9 @@ AudioSource:
   m_GameObject: {fileID: 1849761025}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: -5598737539634388294, guid: 54e14ac5b2751844a97b706a424507a0, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8a1f2d862a834c24db16c9c0d70fa8ac, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3561,8 +3558,8 @@ GameObject:
   - component: {fileID: 1948592521}
   - component: {fileID: 1948592524}
   - component: {fileID: 1948592523}
-  - component: {fileID: 1948592522}
   - component: {fileID: 1948592525}
+  - component: {fileID: 1948592522}
   m_Layer: 5
   m_Name: TimeOfEnemiesImage
   m_TagString: Untagged
@@ -3602,8 +3599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 10
-  Tick: 0
+  _maxTime: 60
 --- !u!114 &1948592523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3651,7 +3647,7 @@ AudioSource:
   m_GameObject: {fileID: 1948592520}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6394892900186827211, guid: 54e14ac5b2751844a97b706a424507a0, type: 2}
   m_audioClip: {fileID: 8300000, guid: d8ae5316a3b239749ad0e727a2f2e5bb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.115
@@ -3861,7 +3857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 964d86640ee63e04e86862b80bd24943, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db3668a883b40944bb8331c482903f6f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4003,26 +3999,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f1f5e7ac1f8e74bae43ff6aa56e3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HarvestTimer: {fileID: 363217989}
-  EatingTimer: {fileID: 1849761029}
-  RaidTimerImg: {fileID: 1948592523}
-  WorkerTimerImg: {fileID: 839665079}
-  WarriorsTimerImg: {fileID: 780130572}
-  workerButton: {fileID: 579145861}
-  warriorButton: {fileID: 1439802569}
-  resourcesText: {fileID: 1526962383}
-  workerCount: 3
-  warriorsCount: 0
-  wheatCount: 10
-  wheatPerWorkers: 2
-  wheatToWarriors: 5
-  workerCost: 4
-  warriorCost: 8
-  workerCreatTime: 4
-  warriorCreatTime: 6
-  raidMaxTime: 30
-  raidIncrease: 2
-  nextRaid: 0
+  _harvestTimer: {fileID: 363217989}
+  _eatingTimer: {fileID: 1849761029}
+  _raidTimerImg: {fileID: 1948592523}
+  _workerTimerImg: {fileID: 839665079}
+  _warriorsTimerImg: {fileID: 780130572}
+  _workerButton: {fileID: 579145861}
+  _warriorButton: {fileID: 1439802569}
+  _resourcesText: {fileID: 1526962383}
+  _workerCount: 4
+  _warriorsCount: 0
+  _wheatCount: 15
+  _wheatPerWorkers: 3
+  _wheatToWarriors: 5
+  _workerCost: 4
+  _warriorCost: 7
+  _workerCreatTime: 7
+  _warriorCreatTime: 13
+  _raidMaxTime: 60
+  _raidIncrease: 3
+  _nextRaid: 0
 --- !u!1 &2107604130
 GameObject:
   m_ObjectHideFlags: 0
