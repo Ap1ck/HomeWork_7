@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image _workerTimerImg;
     [SerializeField] private Image _warriorsTimerImg;
 
+    [SerializeField] private Image _losePanel;
+    [SerializeField] private Image _winPanel;
+
     [SerializeField] private Button _workerButton;
     [SerializeField] private Button _warriorButton;
 
@@ -32,12 +35,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _raidMaxTime;
     [SerializeField] private int _raidIncrease;
     [SerializeField] private int _nextRaid;
+    [SerializeField] private int _warriorsToWin = 2;
+    [SerializeField] private int _wheatToWin = 20;
 
-    [SerializeField] private SetActiveImage _activeImage;
     public PauseController _pause;
+    public MuteSound _mute;
 
-    private int _warriorsToWin = 2;
-    private int _wheatToWin = 20;
     private float _workerTimer = -2;
     private float _warriorTimer = -2;
     private float _raidTimer;
@@ -100,16 +103,17 @@ public class GameManager : MonoBehaviour
             _warriorTimer = -2;
         }
 
-        //if (_warriorsCount >= _warriorsToWin && _wheatToWin <= _wheatCount)
-        //{
-        //    _activeImage.ShowImage();
-        //    _pause.PauseGame();
-        //}
-        //else if (_warriorsCount <= -1)
-        //{
-        //    _activeImage.ShowImage();
-        //    _pause.PauseGame();
-        //}
+        if (_warriorsCount >= _warriorsToWin && _wheatToWin <= _wheatCount)
+        {
+            _winPanel.gameObject.SetActive(true);
+            _pause.PauseGame();
+        }
+        
+        if (_warriorsCount <= -1)
+        {
+            _losePanel.gameObject.SetActive(true);
+            _pause.PauseGame();
+        }
 
         UpdateText();
     }
@@ -145,6 +149,6 @@ public class GameManager : MonoBehaviour
     private void UpdateText()
     {
         _resourcesText.text = ($"Рабочие:{_workerCount} \n Воины:{_warriorsCount} \n\n Пшеница:{_wheatCount}");
-        _currentWarriors.text = ($"Текущая волна врагов: {_nextRaid} \n следующая волна: {_nextRaid+_raidIncrease} \n\n");
+        _currentWarriors.text = ($"Текущая волна врагов: {_nextRaid} \n следующая волна: {_nextRaid + _raidIncrease} \n\n");
     }
 }
