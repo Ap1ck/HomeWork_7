@@ -1817,6 +1817,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2044708520}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ShowResultWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1439802570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2673,6 +2685,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684671363}
   m_CullTransparentMesh: 1
+--- !u!1 &1730086891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1730086894}
+  - component: {fileID: 1730086893}
+  - component: {fileID: 1730086892}
+  m_Layer: 5
+  m_Name: RaidInformText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1730086892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730086891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1730086893
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730086891}
+  m_CullTransparentMesh: 1
+--- !u!224 &1730086894
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730086891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2044708519}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -73, y: 30}
+  m_SizeDelta: {x: 180, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1808443665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,10 +3501,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1912806776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7879bbefda9262448c6296cbc8aac8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d61aeba0cb9fca47b3cae379786d9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panel: {fileID: 1912806778}
+  _imageActive: {fileID: 1912806778}
 --- !u!1 &1914120047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,7 +3717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 200
+  _maxTime: 60
 --- !u!114 &1948592523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4006,6 +4097,7 @@ RectTransform:
   - {fileID: 2107604131}
   - {fileID: 1912806777}
   - {fileID: 1914120048}
+  - {fileID: 1730086894}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4028,13 +4120,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _harvestTimer: {fileID: 363217989}
   _eatingTimer: {fileID: 1849761029}
-  _resultGame: {fileID: 0}
   _raidTimerImg: {fileID: 1948592523}
   _workerTimerImg: {fileID: 839665079}
   _warriorsTimerImg: {fileID: 780130572}
   _workerButton: {fileID: 579145861}
   _warriorButton: {fileID: 1439802569}
   _resourcesText: {fileID: 1526962383}
+  _currentWarriors: {fileID: 1730086892}
   _workerCount: 4
   _warriorsCount: 0
   _wheatCount: 15
@@ -4044,9 +4136,11 @@ MonoBehaviour:
   _warriorCost: 7
   _workerCreatTime: 5
   _warriorCreatTime: 5
-  _raidMaxTime: 200
-  _raidIncrease: 3
-  _nextRaid: 0
+  _raidMaxTime: 60
+  _raidIncrease: 1
+  _nextRaid: 1
+  _activeImage: {fileID: 0}
+  _pause: {fileID: 964737054}
 --- !u!1 &2107604130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4234,10 +4328,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2107604130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7879bbefda9262448c6296cbc8aac8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d61aeba0cb9fca47b3cae379786d9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panel: {fileID: 2107604132}
+  _imageActive: {fileID: 2107604132}
 --- !u!1 &2122733163
 GameObject:
   m_ObjectHideFlags: 0

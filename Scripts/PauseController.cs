@@ -13,9 +13,7 @@ public class PauseController : MonoBehaviour
     [SerializeField] private AudioSource _eatingSound;
     [SerializeField] private AudioSource _backgroundSound;
 
-
     private bool _paused;
-    private bool _mute;
 
     public void PauseGame()
     {

@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private ImageTimer _harvestTimer;
     [SerializeField] private ImageTimer _eatingTimer;
-    [SerializeField] private ResultGame _resultGame;
     [SerializeField] private Image _raidTimerImg;
     [SerializeField] private Image _workerTimerImg;
     [SerializeField] private Image _warriorsTimerImg;
@@ -16,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button _warriorButton;
 
     [SerializeField] private Text _resourcesText;
+    [SerializeField] private Text _currentWarriors;
 
     [SerializeField] private int _workerCount;
     [SerializeField] private int _warriorsCount;
@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _raidIncrease;
     [SerializeField] private int _nextRaid;
 
+    public SetActiveImage _activeImage;
+    public PauseController _pause;
+
+    private int _warriorsToWin = 2;
+    private int _wheatToWin = 20;
     private float _workerTimer = -2;
     private float _warriorTimer = -2;
     private float _raidTimer;
@@ -95,6 +100,17 @@ public class GameManager : MonoBehaviour
             _warriorTimer = -2;
         }
 
+        //if (_warriorsCount >= _warriorsToWin && _wheatToWin <= _wheatCount)
+        //{
+        //    _activeImage.ShowImage();
+        //    _pause.PauseGame();
+        //}
+        //else if (_warriorsCount <= -1)
+        //{
+        //    _activeImage.ShowImage();
+        //    _pause.PauseGame();
+        //}
+
         UpdateText();
     }
 
@@ -129,5 +145,6 @@ public class GameManager : MonoBehaviour
     private void UpdateText()
     {
         _resourcesText.text = ($"Рабочие:{_workerCount} \n Воины:{_warriorsCount} \n\n Пшеница:{_wheatCount}");
+        _currentWarriors.text = ($"Текущая волна врагов: {_nextRaid} \n следующая волна: {_nextRaid+_raidIncrease} \n\n");
     }
 }
