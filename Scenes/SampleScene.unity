@@ -2761,7 +2761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73, y: 30}
+  m_AnchoredPosition: {x: 292, y: 45}
   m_SizeDelta: {x: 180, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1808443665
@@ -3504,7 +3504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d61aeba0cb9fca47b3cae379786d9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageActive: {fileID: 1912806778}
 --- !u!1 &1914120047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,7 +3575,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0417\u0430\u0434\u0430\u0447\u0430:\n\u0414\u043E\u0431\u044B\u0442\u044C
-    \u0435\u0434\u044B:20\n\u041E\u0431\u0443\u0447\u0438\u0442\u044C \u0432\u043E\u0438\u043D\u043E\u0432:2"
+    \u0435\u0434\u044B:100\n\u041E\u0431\u0443\u0447\u0438\u0442\u044C \u0432\u043E\u0438\u043D\u043E\u0432:7"
 --- !u!222 &1914120050
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4331,7 +4330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d61aeba0cb9fca47b3cae379786d9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageActive: {fileID: 2107604132}
 --- !u!1 &2122733163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,4 +4418,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d61aeba0cb9fca47b3cae379786d9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageActive: {fileID: 2122733165}

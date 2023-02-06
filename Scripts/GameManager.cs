@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _raidIncrease;
     [SerializeField] private int _nextRaid;
 
-    public SetActiveImage _activeImage;
+    [SerializeField] private SetActiveImage _activeImage;
     public PauseController _pause;
 
     private int _warriorsToWin = 2;

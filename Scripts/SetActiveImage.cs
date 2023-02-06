@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SetActiveImage : MonoBehaviour
 {
-    [SerializeField] private Image _imageActive;
+    private Image _imageActive;
 
     private bool _activeImage;
 
