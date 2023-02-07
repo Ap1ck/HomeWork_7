@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 121506587}
   - component: {fileID: 121506586}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TimeCollectionOfFoodImageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 910611138}
   - component: {fileID: 910611137}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TimeHarvestingImageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1246,7 +1246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -353, y: 148}
+  m_AnchoredPosition: {x: -353, y: 189}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964737050
@@ -1317,9 +1317,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2122733167}
-        m_TargetAssemblyTypeName: SetActiveImage, Assembly-CSharp
-        m_MethodName: ShowImage
+      - m_Target: {fileID: 2044708520}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PauseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2384,7 +2384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -353, y: 107}
+  m_AnchoredPosition: {x: -353, y: 148}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617387305
@@ -2736,7 +2736,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u0420\u0435\u0439\u0434\u043E\u0432 \u0434\u043E \u043D\u0430\u043F\u0430\u0434\u0435\u043D\u0438\u044F:\n\u0422\u0435\u043A\u0443\u0449\u0430\u044F
+    \u0432\u043E\u043B\u043D\u0430:\n\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0430\u044F
+    \u0432\u043E\u043B\u043D\u0430:"
 --- !u!222 &1730086893
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2755,14 +2757,15 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1968460454}
   m_Father: {fileID: 2044708519}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 292, y: 45}
-  m_SizeDelta: {x: 180, y: 80}
+  m_AnchoredPosition: {x: -295, y: 13}
+  m_SizeDelta: {x: 180, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1808443665
 GameObject:
@@ -2930,7 +2933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d3d57f9a395a46ac928ed15e3a9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 200
+  _maxTime: 100
 --- !u!82 &1849761030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3039,7 +3042,7 @@ GameObject:
   - component: {fileID: 1868695706}
   - component: {fileID: 1868695705}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TimeOfEnemiesImageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3525,7 +3528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -292, y: 30}
+  m_AnchoredPosition: {x: -298, y: 84}
   m_SizeDelta: {x: 170, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914120049
@@ -3838,6 +3841,85 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1968460451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968460454}
+  - component: {fileID: 1968460453}
+  - component: {fileID: 1968460452}
+  m_Layer: 5
+  m_Name: NextRaidAttackViaText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1968460452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968460451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1968460453
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968460451}
+  m_CullTransparentMesh: 1
+--- !u!224 &1968460454
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968460451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730086894}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 110, y: 0}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1972573006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,10 +4193,11 @@ MonoBehaviour:
   _warriorsTimerImg: {fileID: 780130572}
   _losePanel: {fileID: 2107604132}
   _winPanel: {fileID: 1912806778}
+  _pauseImage: {fileID: 2122733165}
   _workerButton: {fileID: 579145861}
   _warriorButton: {fileID: 1439802569}
   _resourcesText: {fileID: 1526962383}
-  _currentWarriors: {fileID: 1730086892}
+  _currentWarriors: {fileID: 1968460452}
   _workerCount: 4
   _warriorsCount: 0
   _wheatCount: 15
@@ -4126,10 +4209,11 @@ MonoBehaviour:
   _warriorCreatTime: 5
   _raidMaxTime: 60
   _raidIncrease: 1
-  _nextRaid: 1
+  _nextRaid: 0
   _warriorsToWin: 4
   _wheatToWin: 50
   _pause: {fileID: 964737054}
+  _mute: {fileID: 1617387310}
 --- !u!1 &2107604130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4318,7 +4402,6 @@ GameObject:
   - component: {fileID: 2122733164}
   - component: {fileID: 2122733166}
   - component: {fileID: 2122733165}
-  - component: {fileID: 2122733167}
   m_Layer: 5
   m_Name: PauseButtonImage
   m_TagString: Untagged
@@ -4383,15 +4466,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122733163}
   m_CullTransparentMesh: 1
---- !u!114 &2122733167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122733163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d61aeba0cb9fca47b3cae379786d9d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
